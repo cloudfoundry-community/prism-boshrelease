@@ -4,21 +4,21 @@ require 'json'
 
 concourse:
   url: "<%= p('concourse.url') %>"
-  insecure_skip_verify: "<%= p('concourse.insecure_skip_verify') %>"
+  insecure_skip_verify: <%= p('concourse.insecure_skip_verify') %>
   auth:
     username: "<%= p('concourse.auth.username') %>"
     password: "<%= p('concourse.auth.password') %>"
 server:
   port: <%= p('server.port') %>
   <%
-    if_p('server.tls.enabled') do |enabled|
-      if enabled then
+  if_p('server.tls.enabled') do |enabled|
+    if enabled then
   -%>
   tls:
     enabled: true
     certificate_path: "/var/vcap/jobs/prism/config/certificate.pem"
     private_key_path: "/var/vcap/jobs/prism/config/private_key.pem"
   <%
-      end
     end
+  end
   -%>
