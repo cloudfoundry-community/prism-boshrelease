@@ -1,0 +1,8 @@
+---
+name: prism
+
+dependencies:
+- golang-1.15-linux
+
+files:
+- prism/**/*

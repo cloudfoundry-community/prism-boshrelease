@@ -1,0 +1,6 @@
+final_name: prism
+blobstore:
+  provider: s3
+  options:
+    bucket_name: prism-boshrelease
+    region: us-east-2

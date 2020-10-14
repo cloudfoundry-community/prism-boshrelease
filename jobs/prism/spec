@@ -1,0 +1,34 @@
+---
+name: prism
+
+templates:
+  config/config.yml.erb: config/config.yml
+  bin/ctl: bin/ctl
+
+packages:
+- prism
+
+properties:
+  concourse.url:
+    description: the URL of the Concourse ATC server with the protocol scheme 
+      included
+  concourse.insecure_skip_verify:
+    description: whether to verify the server certificate when connecting to the
+      Concourse ATC server. Defaults to false.
+    default: false
+  concourse.auth.username:
+    description: The username to authenticate to the ATC as.
+  concourse.auth.password:
+    description: The password to authenticate to the ATC with.
+  server.port:
+    description: The port for the prism server to listen on.
+    default: 4580
+  server.tls.enabled:
+    description: If true, the prism server should listen on TLS.
+    default: false
+  server.tls.certificate:
+    description: The certificate that the prism server should serve. Required if
+      server.tls.enabled is set to true.
+  server.tls.private_key:
+    description: The private key that the prism server should use for TLS.
+      Required if server.tls.enabled is set to true.

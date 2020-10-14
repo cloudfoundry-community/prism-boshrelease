@@ -1,0 +1,5 @@
+check process doomsday
+  with pidfile   /var/vcap/sys/run/prism/prism.pid
+  start program "/var/vcap/jobs/prism/bin/ctl start"
+  stop program  "/var/vcap/jobs/prism/bin/ctl stop"
+  group vcap

@@ -1,0 +1,24 @@
+<%
+require 'json' 
+-%>
+
+concourse:
+  url: "<%= p('concourse.url') %>"
+  insecure_skip_verify: "<%= p('concourse.insecure_skip_verify') %>"
+  auth:
+    username: "<%= p('concourse.auth.username') %>"
+    password: "<%= p('concourse.auth.password') %>"
+server:
+  port: <%= p('server.port') %>
+  <%
+    if_p('server.tls.enabled') do |enabled|
+      if enabled then
+  -%>
+  tls:
+    enabled: true
+    certificate: "<%= JSON.parse(p('server.tls.certificate')) %>"
+    private_key: "<%= JSON.parse(p('server.tls.private_key')) %>"
+  <%
+      end
+    end
+  -%>

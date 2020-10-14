@@ -1,0 +1,3 @@
+[submodule "src/prism"]
+	path = src/prism
+	url = git@github.com:thomasmitchell/prism.git
