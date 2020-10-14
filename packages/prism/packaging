@@ -1,7 +1,7 @@
 #!/bin/bash -eu
 
 source /var/vcap/packages/golang-1.15-linux/bosh/compile.env
-mkdir -p "${BOSH_COMPILE_TARGET}/bin"
+mkdir -p "${BOSH_INSTALL_TARGET}/bin"
 cd prism
-go build -o "${BOSH_COMPILE_TARGET}/bin/prism"
-chmod +x "${BOSH_COMPILE_TARGET}/bin/prism"
+go build -o "${BOSH_INSTALL_TARGET}/bin/prism"
+chmod +x "${BOSH_INSTALL_TARGET}/bin/prism"
