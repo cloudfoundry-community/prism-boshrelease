@@ -16,8 +16,8 @@ server:
   -%>
   tls:
     enabled: true
-    certificate: "<%= JSON.parse(p('server.tls.certificate')) %>"
-    private_key: "<%= JSON.parse(p('server.tls.private_key')) %>"
+    certificate_path: "/var/vcap/jobs/prism/config/certificate.pem"
+    private_key_path: "/var/vcap/jobs/prism/config/private_key.pem"
   <%
       end
     end

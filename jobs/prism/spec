@@ -3,6 +3,8 @@ name: prism
 
 templates:
   config/config.yml.erb: config/config.yml
+  config/certificate.pem.erb: config/certificate.pem
+  config/private_key.pem.erb: config/private_key.pem
   bin/ctl: bin/ctl
 
 packages:
