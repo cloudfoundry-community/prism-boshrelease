@@ -1,0 +1,23 @@
+name: prism
+version: 1.0.0
+commit_hash: ec4bc41
+uncommitted_changes: false
+jobs:
+- name: prism
+  version: ea598389ae65ee5e023e2932daff54a50c2fe6681b2333ded4973f603df50ae0
+  fingerprint: ea598389ae65ee5e023e2932daff54a50c2fe6681b2333ded4973f603df50ae0
+  sha1: sha256:5bdd570f328e010e0840090b1b067a8e5c8a027338cc46f2aeba404e05fcd9cf
+  packages:
+  - prism
+packages:
+- name: golang-1.15-linux
+  version: a060cbcea3886b105f47da433b133c4061d855a4b049be5c0d733a3651788336
+  fingerprint: a060cbcea3886b105f47da433b133c4061d855a4b049be5c0d733a3651788336
+  sha1: sha256:e3ce4e364c9f07d07fc09a0afc935fde7a65da4a7cef34fbd2ef0d78d40ca07f
+  dependencies: []
+- name: prism
+  version: 19800bc0b619b7e1e2653adc18006fe3e943fb9925fd710ab5b7a7d40d5dffb2
+  fingerprint: 19800bc0b619b7e1e2653adc18006fe3e943fb9925fd710ab5b7a7d40d5dffb2
+  sha1: sha256:d57807ae817ad9ba15c4439c89532d451548fb14dbdedde591f895125b1fe53d
+  dependencies:
+  - golang-1.15-linux
