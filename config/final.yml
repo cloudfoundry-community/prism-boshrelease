@@ -1,6 +1,5 @@
 name: prism
 blobstore:
-  provider: s3
+  provider: local
   options:
-    bucket_name: prism-boshrelease
-    region: us-east-2
+    blobstore_path: /tmp/prism-blobs
