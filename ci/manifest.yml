@@ -1,0 +1,51 @@
+name: prism-ci
+
+instance_groups:
+- name: prism
+  azs: [z1]
+  instances: 1
+  jobs:
+  - name: prism
+    release: prism
+    properties:
+      concourse:
+        url: ((concourse_url))
+        auth:
+          username: ((concourse_username))
+          password: ((concourse_password))
+      server:
+        tls:
+          enabled: true
+          certificate: ((server_certificate))
+          private_key: ((server_private_key))
+ 
+  vm_type:       ((vm_type))
+  stemcell:      default
+  networks:
+  - name: ((network_name))
+
+variables:
+- name: concourse_password
+  type: password
+- name: server_certificate
+  type: certificate
+- name: server_private_key
+  type: certificate
+
+update:
+  canaries: 0
+  max_in_flight: 1
+  serial: true
+  canary_watch_time: 1000-12000
+  update_watch_time: 1000-12000 
+
+stemcells:
+- alias: default
+  os: ubuntu-bionic
+  version: latest
+
+releases:
+- name: prism
+  url:  https://github.com/BiBamba/prism-boshrelease/releases/download/v1.0.0/prism-1.0.0.tgz
+  sha1: 3fd35da35a239adf41bd6121c93ebff005540760
+  version: 1.0.0
