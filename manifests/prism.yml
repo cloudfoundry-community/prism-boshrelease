@@ -25,21 +25,21 @@ instance_groups:
           private_key: ((concourse-server-tls.private_key))
 
 variables:
-- name: concourse_password
-  type: password
-- name: concourse-ca
-  type: certificate
-  options:
-    is_ca: true
-    common_name: concourseCA
-- name: concourse-server-tls
-  type: certificate
-  options: 
-    ca: concourse-ca
-    common_name: concourse
-    extended_key_usage:
-    - client_auth
-    - server_auth
+  - name: concourse_password
+    type: password
+  - name: concourse-ca
+    type: certificate
+    options:
+      is_ca: true
+      common_name: concourseCA
+  - name: concourse-server-tls
+    type: certificate
+    options: 
+      ca: concourse-ca
+      common_name: concourse
+      extended_key_usage:
+      - client_auth
+      - server_auth
 
 update:
   canaries: 0
