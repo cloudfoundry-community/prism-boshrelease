@@ -1,0 +1,61 @@
+name: prism
+
+instance_groups:
+- name: prism
+  azs: [z1]
+  instances: 1
+  vm_type:  default
+  stemcell: default
+  networks: [{name: default}]
+  persistent_disk: 10240
+
+  jobs:
+  - name: prism
+    release: prism
+    properties:
+      concourse:
+        url: https://pipes.starkandwayne.com/
+        auth:
+          username: concourse
+          password: ((concourse_password))
+      server:
+        tls:
+          enabled: true
+          certificate: ((cncourse-server-tls.certificate))((concourse-ca.certificate))
+          private_key: ((concourse-server-tls.private_key))
+
+variables:
+- name: concourse_password
+  type: password
+- name: concourse-ca
+  type: certificate
+  options:
+    is_ca: true
+    common_name: concourseCA
+- name: concourse-server-tls
+  type: certificate
+  options: 
+    ca: concourse-ca
+    common_name: concourse
+    extended_key_usage:
+    - client_auth
+    - server_auth
+
+update:
+  canaries: 0
+  max_in_flight: 1
+  serial: true
+  canary_watch_time: 1000-12000
+  update_watch_time: 1000-12000 
+
+stemcells:
+- alias: default
+  os: ubuntu-bionic
+  version: latest
+
+releases:
+- name: prism
+  version: 1.0.0 
+  url: https://github.com/BiBamba/prism-boshrelease/releases/download/v1.0.0/prism-1.0.0.tgz
+
+
