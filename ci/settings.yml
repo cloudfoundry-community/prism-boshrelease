@@ -1,20 +1,20 @@
 ---
 meta:
-  name:    gh
-  release: GitHub CLI (v2+)
+  name:    prism
+  release: Prism Boshrelease
   target:  main@pipes
   url:     https://pipes.starkandwayne.com
 
-  initial_version: 0.1.0
+  initial_version: 1.0.0
 
   manifest:
-    path: "manifests/gh-cli.yml"
+    path: "manifests/prism.yml"
     operator_file_paths: "manifests/operators/credentials.yml" # comma separated list relative to repo root
     vars: ""
 
   git:
-    email: ci@starkandwayne.com
-    name:  Stark & Wayne CI Bot
+    email: maxime-tizie@hotmail.fr #ci@starkandwayne.com
+    name:  Bi Bamba CI Bot #Stark & Wayne CI Bot
 
   bosh-lite:
     target:   ((thunder-dome.url))
@@ -27,8 +27,8 @@ meta:
     secret_key: ((cfcommunity.secret)) # aws.secret_access_key
 
   github:
-    owner:  starkandwayne
-    repo:   gh-boshrelease
+    owner:  BiBamba #starkandwayne
+    repo:   prism-boshrelease
     branch: main
     private_key:  ((github.private-key))
     access_token: ((github.access-token))
