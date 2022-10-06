@@ -25,8 +25,8 @@ instance_groups:
           private_key: ((concourse-server-tls.private_key))
 
 variables:
-  - name: concourse_password
-    type: password
+#  - name: concourse_password
+#    type: password
   - name: concourse-ca
     type: certificate
     options:
