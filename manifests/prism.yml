@@ -21,7 +21,7 @@ instance_groups:
       server:
         tls:
           enabled: true
-          certificate: ((cncourse-server-tls.certificate))((concourse-ca.certificate))
+          certificate: ((cncourse-server-tls.certificate))
           private_key: ((concourse-server-tls.private_key))
 
 variables:
