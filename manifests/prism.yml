@@ -24,7 +24,7 @@ instance_groups:
           certificate: ((prism.concourse.server.tls.certificate))
           private_key: ((prism.concourse.server.tls.key))
 
-variables:
+#variables:
 #  - name: concourse_password
 #    type: password
 #  - name: concourse-ca
