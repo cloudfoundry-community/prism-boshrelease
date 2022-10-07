@@ -17,10 +17,10 @@ meta:
     name:  Bi Bamba CI Bot #Stark & Wayne CI Bot
 
   bosh-lite:
-    target:   https://10.128.224.0:25555 #((thunder-dome.url))
-    username: ((snw-bbamba-lab.username)) #((thunder-dome.username))
-    password: ((snw-bbamba-lab.password)) #((thunder-dome.password))
-    cacert:   ((snw-bbamba-lab.ca-certificate)) #((thunder-dome.ca-certificate))
+    target:   ((thunder-dome.url))
+    username: ((thunder-dome.username))
+    password: ((thunder-dome.password))
+    cacert:   ((thunder-dome.ca-certificate))
 
   aws:
     access_key: ((cfcommunity.access)) # aws.access_key_id
