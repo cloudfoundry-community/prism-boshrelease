@@ -13,8 +13,8 @@ meta:
     vars: ""
 
   git:
-    email: maxime-tizie@hotmail.fr #ci@starkandwayne.com
-    name:  Bi Bamba CI Bot #Stark & Wayne CI Bot
+    email: ci@starkandwayne.com
+    name:  Stark & Wayne CI Bot
 
   bosh-lite:
     target:   ((thunder-dome.url))
@@ -27,7 +27,7 @@ meta:
     secret_key: ((cfcommunity.secret)) # aws.secret_access_key
 
   github:
-    owner:  BiBamba #starkandwayne
+    owner:  cloudfoundry-community#starkandwayne
     repo:   prism-boshrelease
     branch: main
     private_key:  ((github.private-key))
