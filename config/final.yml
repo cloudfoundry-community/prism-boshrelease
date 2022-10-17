@@ -1,4 +1,4 @@
-name: prism
+final_name: prism
 blobstore:
   provider: s3
   options:
